@@ -11,7 +11,7 @@ const Search = ({ onSearchComplete }) => {
   const handleSearch = async () => {
     const lowercaseCurrencyCode = currencyCode.toLowerCase();
     const response = await axios.get(
-      `http://localhost:5000/countries/${lowercaseCurrencyCode}`
+      `https://country-currency-gvnv.onrender.com/countries/${lowercaseCurrencyCode}`
     );
     onSearchComplete(response.data);
     setCountries(response.data);
@@ -19,7 +19,7 @@ const Search = ({ onSearchComplete }) => {
 
   const handleAddFavorite = async (country) => {
     try {
-      const response = await axios.post("http://localhost:5000/favorite", {
+      const response = await axios.post("https://country-currency-gvnv.onrender.com/favorite", {
         countryId: country.id,
       });
 

@@ -8,7 +8,7 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/auth/register", {
+      const response = await axios.post("https://country-currency-gvnv.onrender.com/auth/register", {
         email,
         password,
         username,
