@@ -1,5 +1,3 @@
-// routes/favoriteRouter.js
-
 const { Router } = require("express");
 const {
   addFavorite,

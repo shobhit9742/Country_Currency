@@ -6,7 +6,7 @@ const UserModel = require("../models/User");
 // Add to favorites
 exports.addFavorite = async (req, res) => {
   try {
-    const user = await UserModel.findById(req.user.id);
+    const user = await UserModel.findById(req._id);
     const country = new CountryModel(req.body);
     await country.save();
     user.favorites.push(country);
@@ -21,7 +21,7 @@ exports.addFavorite = async (req, res) => {
 // Get favorites
 exports.getFavorites = async (req, res) => {
   try {
-    const user = await UserModel.findById(req.user.id).populate("favorites");
+    const user = await UserModel.findById(req._id).populate("favorites");
     res.json(user.favorites);
   } catch (err) {
     console.error(err.message);
